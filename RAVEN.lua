@@ -2616,7 +2616,7 @@ end
 return false
 end
 Text = [[
-*أهلاً بك في السوࢪس* [ريفن𝗥𝗮𝗩𝗲𝗡 𝗧𝗘𝗔𝗠💘](t.me/XQCXQ)
+*أهلاً بك في السوࢪس* [𝗥𝗮𝗩𝗲𝗡 𝗧𝗘𝗔𝗠💘](t.me/XQCXQ)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -10534,7 +10534,7 @@ Text = [[
 *✫م9 ◂ اوامر مطور الاساسي* 
 *✫م10 ◂ اوامر الاعضاء*
 ٴ*•━━━━━━ 𝗥𝗡 ━━━━━━━•*ٴ
-[ريفن𝗥𝗮𝗩𝗲𝗡 𝗧𝗘𝗔𝗠 ](t.me/XQJXQ) 
+[𝗥𝗮𝗩𝗲𝗡 𝗧𝗘𝗔𝗠 ](t.me/XQJXQ) 
 ]]
 send(msg.chat_id_, msg.id_,(help_text or Text)) 
 return false
@@ -10558,7 +10558,7 @@ for k,v in pairs(zx.ok) do
 i = i + 1
 t = t..i.."-  "..v.." \n"
 end
-send(msg.chat_id_, msg.id_, t..'ٴ✫∫ٴ*•━━━━━━ 𝗥𝗡 ━━━━━━━•*ٴ✫∫○ٴ\n✫︙[ريفن𝗥𝗮𝗩𝗲𝗡 𝗧𝗘𝗔𝗠](t.me/XQJXQ) ')
+send(msg.chat_id_, msg.id_, t..'ٴ✫∫ٴ*•━━━━━━ 𝗥𝗡 ━━━━━━━•*ٴ✫∫○ٴ\n✫︙[𝗥𝗮𝗩𝗲𝗡 𝗧𝗘𝗔𝗠](t.me/XQJXQ) ')
 end
 if text == "تعطيل الابراج" and Manager(msg) then
 send(msg.chat_id_, msg.id_, '*✫︙تم تعطيل الابراج*')
@@ -10685,7 +10685,7 @@ if audios.Info == true then
 local Text ='*✫︙تم اختيار المقطع الصوتي لك*'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = 'ريفن𝗥𝗮𝗩𝗲𝗡 𝗧𝗘𝗔𝗠.',url="t.me/XQCXQ"}},
+{{text = '𝗥𝗮𝗩𝗲𝗡 𝗧𝗘𝗔𝗠.',url="t.me/XQCXQ"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice='..URL.escape(audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
