@@ -1074,12 +1074,12 @@ end
 if text == 'تحديث السورس ✫' and DevRAVENW(msg) then 
 os.execute('rm -rf RAVEN.lua')
 os.execute('wget https://raw.githubusercontent.com/RAVEN-DEV/RAVEN/main/RAVEN.lua')
-send(msg.chat_id_, msg.id_,' *✫︙تم تحديث السورس* \n*✫︙لديك اخر اصدار لسورس رافين*\n*✫︙الاصدار » { 2.8v}*')
+send(msg.chat_id_, msg.id_,' *✫︙تم تحديث السورس* \n*✫︙لديك اخر اصدار لسورس ريفن*\n*✫︙الاصدار » { 2.8v}*')
 dofile('RAVEN.lua')  
 end
 if text == 'الاصدار ✫' and DevRAVENW(msg) then 
 database:del(bot_id..'Srt:Bot') 
-send(msg.chat_id_, msg.id_,' *✫︙اصدار سورس رافين* \n*✫︙الاصدار »{ 2.8v}*')
+send(msg.chat_id_, msg.id_,' *✫︙اصدار سورس ريفن* \n*✫︙الاصدار »{ 2.8v}*')
 end
 if text == 'قناه تحديثات البوت ✫' and DevRAVENW(msg) then 
 database:del(bot_id..'Srt:Bot') 
@@ -2325,7 +2325,7 @@ return false
 end
 os.execute('rm -rf RAVEN.lua')
 os.execute('wget https://raw.githubusercontent.com/RAVEN-DEV/RAVEN/main/RAVEN.lua')
-send(msg.chat_id_, msg.id_,' *✫︙تم تحديث السورس* \n*✫︙لديك اخر اصدار لسورس رافين*\n*✫︙الاصدار » { 2.8v}*')
+send(msg.chat_id_, msg.id_,' *✫︙تم تحديث السورس* \n*✫︙لديك اخر اصدار لسورس ريفن*\n*✫︙الاصدار » { 2.8v}*')
 dofile('RAVEN.lua')  
 end
 
@@ -3851,7 +3851,7 @@ end,nil)
 end
 
 if text == 'الملفات' and DevRAVENW(msg) then
-t = ' *✫︙ملفات السورس رافين ↓*\n*•━━━━━━ 𝗥𝗡 ━━━━━━━•* \n'
+t = ' *✫︙ملفات السورس ريفن ↓*\n*•━━━━━━ 𝗥𝗡 ━━━━━━━•* \n'
 i = 0
 for v in io.popen('ls File_Bot'):lines() do
 if v:match(".lua$") then
@@ -3868,8 +3868,8 @@ if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
 if Get_info then
-local TextS = "\n *✫︙اهلا بك في متجر ملفات رافين*\n*✫︙ملفات السورس ↓*\n*•━━━━━━ 𝗥𝗡 ━━━━━━━•*\n\n"
-local TextE = "\n*•━━━━━━ 𝗥𝗡 ━━━━━━━•*\n *✫︙علامة تعني { ✓ } ملف مفعل*\n *✫︙علامة تعني { ✘ } ملف معطل*\n *✫︙قناة سورس رافين ↓*\n".." *✫︙*[اضغط هنا لدخول](t.me/XQJXQ) \n"
+local TextS = "\n *✫︙اهلا بك في متجر ملفات ريفن*\n*✫︙ملفات السورس ↓*\n*•━━━━━━ 𝗥𝗡 ━━━━━━━•*\n\n"
+local TextE = "\n*•━━━━━━ 𝗥𝗡 ━━━━━━━•*\n *✫︙علامة تعني { ✓ } ملف مفعل*\n *✫︙علامة تعني { ✘ } ملف معطل*\n *✫︙قناة سورس ريفن ↓*\n".." *✫︙*[اضغط هنا لدخول](t.me/XQJXQ) \n"
 local NumFile = 0
 for name,Info in pairs(res.plugins_) do
 local Check_File_is_Found = io.open("File_Bot/"..name,"r")
@@ -3907,7 +3907,7 @@ os.execute("rm -fr File_Bot/"..file)
 send(msg.chat_id_, msg.id_,t) 
 dofile('RAVEN.lua')  
 else
-send(msg.chat_id_, msg.id_," *✫︙عذرا الملف لايدعم سورس رافين* \n") 
+send(msg.chat_id_, msg.id_," *✫︙عذرا الملف لايدعم سورس ريفن* \n") 
 end
 return false
 end
@@ -3929,7 +3929,7 @@ chek:close()
 send(msg.chat_id_, msg.id_,t) 
 dofile('RAVEN.lua')  
 else
-send(msg.chat_id_, msg.id_," *✫︙عذرا الملف لايدعم سورس رافين* \n") 
+send(msg.chat_id_, msg.id_," *✫︙عذرا الملف لايدعم سورس ريفن* \n") 
 end
 return false
 end
@@ -8753,8 +8753,8 @@ end
 return false
 end
 
-if text == ""..(database:get(bot_id..'Name:Bot') or 'رافين').."" then  
-Namebot = (database:get(bot_id..'Name:Bot') or 'رافين')
+if text == ""..(database:get(bot_id..'Name:Bot') or 'ريفن').."" then  
+Namebot = (database:get(bot_id..'Name:Bot') or 'ريفن')
 local RAVEN_Msg = {
 'عمغي 🥺💕.',
 'هاا شتريد كافي ☹️.',
@@ -9354,7 +9354,7 @@ end
 end
 end
 -------------------------------
-if text == ""..(database:get(bot_id..'Name:Bot') or 'رافين').." غادر" or text == 'غادر' then  
+if text == ""..(database:get(bot_id..'Name:Bot') or 'ريفن').." غادر" or text == 'غادر' then  
 if Sudo(msg) and not database:get(bot_id..'Left:Bot'..msg.chat_id_)  then 
 tdcli_function ({ID = "ChangeChatMemberStatus",chat_id_=msg.chat_id_,user_id_=bot_id,status_={ID = "ChatMemberStatusLeft"},},function(e,g) end, nil) 
 send(msg.chat_id_, msg.id_,'*✫︙تم مغادرة المجموعه*') 
@@ -9363,7 +9363,7 @@ end
 return false  
 end
 if text == 'بوت' then
-Namebot = (database:get(bot_id..'Name:Bot') or 'رافين')
+Namebot = (database:get(bot_id..'Name:Bot') or 'ريفن')
 send(msg.chat_id_, msg.id_,'*اسمي '..Namebot..'* ')
 end
 if text == 'الاحصائيات' then
@@ -10830,7 +10830,7 @@ if (text and text == "تفعيل اوامر التحشيش") then
 send(msg.chat_id_, msg.id_, '  *✫︙تم تفعيل اوامر التحشيش*')
 database:del(bot_id.."Fun_Bots:"..msg.chat_id_)
 end
-local Name_Bot = (database:get(bot_id..'Name:Bot') or 'رافين')
+local Name_Bot = (database:get(bot_id..'Name:Bot') or 'ريفن')
 if not database:get(bot_id.."Fun_Bots:"..msg.chat_id_) then
 if text ==  ""..Name_Bot..' شنو رئيك بهاذا' and tonumber(msg.reply_to_message_id_) > 0 then     
 function FunBot(extra, result, success) 
