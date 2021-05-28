@@ -646,12 +646,12 @@ return false
 end
 end,nil)   
 end  
-function plugin_paven(msg)
+function plugin_Peland(msg)
 for v in io.popen('ls File_Bot'):lines() do
 if v:match(".lua$") then
 plugin = dofile("File_Bot/"..v)
-if plugin.paven and msg then
-pre_msg = plugin.paven(msg)
+if plugin.Peland and msg then
+pre_msg = plugin.Peland(msg)
 end
 end
 end
@@ -11196,7 +11196,7 @@ end
 end   
 --------------------------------------------------------------------------------------------------------------
 SourceRAVEN(data.message_,data)
-plugin_paven(data.message_)
+plugin_Peland(data.message_)
 --------------------------------------------------------------------------------------------------------------
 if Chat_Type == 'GroupBot' and ChekAdd(msg.chat_id_) == true then
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data) 
