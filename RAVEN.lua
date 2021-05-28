@@ -646,12 +646,12 @@ return false
 end
 end,nil)   
 end  
-function plugin_Peland(msg)
+function plugin_paven(msg)
 for v in io.popen('ls File_Bot'):lines() do
 if v:match(".lua$") then
 plugin = dofile("File_Bot/"..v)
-if plugin.Peland and msg then
-pre_msg = plugin.Peland(msg)
+if plugin.paven and msg then
+pre_msg = plugin.paven(msg)
 end
 end
 end
@@ -2512,7 +2512,7 @@ if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or tex
 local url,res = https.request('https://vvvzvv.ml/RAVEN/Raven.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.info ~= true then
-send(msg.chat_id_,msg.id_,'✫ السورس اولآ @XUAXU .')
+send(msg.chat_id_,msg.id_,'✫ اشترك بقناه السورس اولا @XUAXU .')
 return false 
 end
 Text = "ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄʀ ʀᴀᴠᴇɴ\n\n[✫  ʀᴀᴠᴇɴ ᴄʜᴀɴɴᴇʟ](http://t.me/MQXMQ)\n\n[✫  ɪɴғᴏ sᴏᴜʀᴄᴇ](http://t.me/RaVeNFiles)\n\n[✫  ʀᴀᴠᴇɴ ᴅᴇᴠᴇʟᴏᴘᴇʀ](http://t.me/PHPHB)\n\n[✫  ʙᴏᴛ ʀᴀᴠᴇɴ](http://t.me/mw_mBOT)"
@@ -11196,7 +11196,7 @@ end
 end   
 --------------------------------------------------------------------------------------------------------------
 SourceRAVEN(data.message_,data)
-plugin_Peland(data.message_)
+plugin_paven(data.message_)
 --------------------------------------------------------------------------------------------------------------
 if Chat_Type == 'GroupBot' and ChekAdd(msg.chat_id_) == true then
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data) 
