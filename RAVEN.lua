@@ -10724,7 +10724,7 @@ Text = [[
 *✫م9 ◂ اوامر مطور الاساسي* 
 *✫م10 ◂ اوامر الاعضاء*
 ٴ*•━━━━━━ 𝗥𝗡 ━━━━━━━•*ٴ
-[𝗥𝗮𝗩𝗲𝗡 𝗥𝗡𝗔𝗠 ](t.me/MQXMQ) 
+[⍆  𝘙𝘈𝘝𝘌𝘕 𝘛𝘌𝘈𝘔 ](t.me/MQXMQ) 
 ]]
 send(msg.chat_id_, msg.id_,(help_text or Text)) 
 return false
@@ -10875,7 +10875,7 @@ if audios.Info == true then
 local Text ='*✫︙تم اختيار المقطع الصوتي لك*'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝗥𝗮𝗩𝗲𝗡 𝗥𝗡𝗔𝗠.',url="t.me/RaVeNFiles"}},
+{{text = '𝗥𝗮𝗩𝗲𝗡 𝗥𝗡𝗔𝗠.',url="t.me/MQxMQ"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice='..URL.escape(audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
