@@ -155,9 +155,9 @@ return var
 end 
 function Rutba(user_id,chat_id)
 if tonumber(user_id) == tonumber(1659386058) then  
-var = 'Telegram Developer'
+var = 'مطور السورس'
 elseif tonumber(user_id) == tonumber(1033028167) then
-var = 'Telegram Developer'
+var = 'مطور السورس'
 elseif tonumber(user_id) == tonumber(SUDO) then
 var = 'المطور الاساسي'  
 elseif database:sismember(bot_id.."DEV:Sudo:T", user_id) then 
