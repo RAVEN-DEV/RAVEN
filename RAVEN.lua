@@ -2720,27 +2720,20 @@ end
 end
 end,nil)   
 end
-if text == 'السورس' or text == 'سورس' or text == 'يا سورس' then
+if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then  
 local url,res = https.request('https://vvvzvv.ml/RAVEN/Raven.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.info ~= true then
 send(msg.chat_id_,msg.id_,'✫︙شترك في قناة السورس اولآ @BZ_ZZ .')
 return false 
 end
-Text = [[
-ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄʀ ʀᴀᴠᴇɴ
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-✫  [ʀᴀᴠᴇɴ ᴄʜᴀɴɴᴇʟ](t.me/BZ_ZZ) 
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
-✫  [ɪɴғᴏ sᴏᴜʀᴄᴇ](t.me/RaVeNFiles)
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
-✫  [ʀᴀᴠᴇɴ ᴅᴇᴠᴇʟᴏᴘᴇʀ](t.me/EEEEEL)
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
-✫  [ʙᴏᴛ ʀᴀᴠᴇɴ](t.me/mw_mBOT)
-┉ ┉ ┉ ┉ ┉ ┉ ┉
-]]
-send(msg.chat_id_, msg.id_,Text)
-return false
+Text = "ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄʀ 𝘳𝘢𝘷𝘦𝘯\n\n[✫  𝘳𝘢𝘷𝘦𝘯 ᴄʜᴀɴɴᴇʟ](http://t.me/BZ_ZZ)\n\n[✫  ɪɴғᴏ sᴏᴜʀᴄᴇ](http://t.me/RaVeNFiles)\n\n[✫  𝘳𝘢𝘷𝘦𝘯 ᴅᴇᴠᴇʟᴏᴘᴇʀ](http://t.me/EEEEEL)\n\n[✫  ʙᴏᴛ 𝘳𝘢𝘷𝘦𝘯](http://t.me/mw_mBOT)"
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '✫ sᴏᴜʀᴄʀ 𝘳𝘢𝘷𝘦𝘯',url="t.me/BZ_ZZ/23"}},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/BZ_ZZ&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 --------------------------------------------------------------------------------------------------------------
 if Chat_Type == 'GroupBot' and ChekAdd(msg.chat_id_) == true then
