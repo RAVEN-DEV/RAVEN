@@ -2174,7 +2174,7 @@ tdcli_function({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data
 if data.username_ ~= false then
 send(msg.chat_id_,0, " *✫︙عذرا ↫* {[@"..data.username_.."]}\n*✫︙عذرا تم منع الملصق* \n" ) 
 else
-send(msg.chat_id_,0, " *✫︙عذرا ↫* {["..data.first_name_.."](T.ME/YYYDR)}\n*✫︙عذرا تم منع الملصق* \n" ) 
+send(msg.chat_id_,0, " *✫︙عذرا ↫* {["..data.first_name_.."](T.ME/XUaXU)}\n*✫︙عذرا تم منع الملصق* \n" ) 
 end
 end,nil)   
 DeleteMessage(msg.chat_id_,{[0] = msg.id_})       
@@ -2190,7 +2190,7 @@ tdcli_function({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data
 if data.username_ ~= false then
 send(msg.chat_id_,0," ✫︙عذرا ↫ {[@"..data.username_.."]}\n ✫︙عذرا تم منع الصوره \n" ) 
 else
-send(msg.chat_id_,0," ✫︙عذرا ↫ {["..data.first_name_.."](T.ME/YYYDR)}\n ✫︙عذرا تم منع الصوره \n") 
+send(msg.chat_id_,0," ✫︙عذرا ↫ {["..data.first_name_.."](T.ME/XUaXU)}\n ✫︙عذرا تم منع الصوره \n") 
 end
 end,nil)   
 DeleteMessage(msg.chat_id_,{[0] = msg.id_})       
@@ -2198,7 +2198,7 @@ return false
 end
 end
 end
------------------------------------------------------------------------- عـمـر الـدلـيـم
+------------------------------------------------------------------------ امـيـر الـدلـيـم
 if msg.content_.ID == 'MessageAnimation' and not Manager(msg) then 
 local filter = database:smembers(bot_id.."filteranimation"..msg.chat_id_)
 for k,v in pairs(filter) do
@@ -2207,7 +2207,7 @@ tdcli_function({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data
 if data.username_ ~= false then
 send(msg.chat_id_,0," *✫︙عذرا ↫* {[@"..data.username_.."]}\n*✫︙عذرا تم منع المتحركه* \n") 
 else
-send(msg.chat_id_,0," *✫︙عذرا ↫* {["..data.first_name_.."](T.ME/YYYDR)}\n*✫︙عذرا تم منع المتحركه* \n" ) 
+send(msg.chat_id_,0," *✫︙عذرا ↫* {["..data.first_name_.."](T.ME/XUaXU)}\n*✫︙عذرا تم منع المتحركه* \n" ) 
 end
 end,nil)   
 DeleteMessage(msg.chat_id_,{[0] = msg.id_})       
@@ -10393,7 +10393,7 @@ local List = {
 - 𓏬 𝐈𝐃 : #id 𓂅 .
 ]],
 [[
-• 𝙐𝙎𝙀𝙍𝙉𝘼𝙈𝙀 ➤ #username .
+• 𝙐𝙎𝙀??𝙉𝘼𝙈𝙀 ➤ #username .
 • 𝙈𝙀𝙎𝙎𝘼𝙂𝙀𝙎 ➤ #msgs .
 • 𝙎𝙏𝘼𝙏𝙎 ➤ #stast .
 • 𝙄𝘿 ➤ #id .
@@ -11873,7 +11873,7 @@ keyboard.inline_keyboard = {
 {{text = '⓺', callback_data="/help6"},{text = '⓻', callback_data="/help7"},{text = '⓼', callback_data="/help8"}},
 {{text = '⓽', callback_data="/help9"},{text = '⓵⓪', callback_data="/help10"}},
 {{text = 'الاوامر الرئيسيه', callback_data="/help"}},
-{{text = '-𝘙𝘈𝘝𝘌𝘕 𝘛𝘌𝘈𝘔', url="t.me/RaVeNFiles"}},
+{{text = '-??𝘈𝘝𝘌𝘕 𝘛𝘌𝘈𝘔', url="t.me/RaVeNFiles"}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
