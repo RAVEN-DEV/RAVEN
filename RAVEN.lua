@@ -2720,7 +2720,7 @@ end
 end
 end,nil)   
 end
-if text == 'السورس' or text == 'سورس' or text == 'يا سورس' then
+if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then
 local url,res = https.request('https://vvvzvv.ml/RAVEN/Raven.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.info ~= true then
@@ -2728,19 +2728,26 @@ send(msg.chat_id_,msg.id_,'✫︙شترك في قناة السورس اولآ @X
 return false 
 end
 Text = [[
-ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄʀ ʀᴀᴠᴇɴ
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-✫  [ʀᴀᴠᴇɴ ᴄʜᴀɴɴᴇʟ](t.me/XUaXU) 
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
-✫  [ɪɴғᴏ sᴏᴜʀᴄᴇ](t.me/RaVeNFiles)
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
-✫  [ʀᴀᴠᴇɴ ᴅᴇᴠᴇʟᴏᴘᴇʀ](t.me/EEEEEL)
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
-✫  [ʙᴏᴛ ʀᴀᴠᴇɴ](t.me/mw_mBOT)
-┉ ┉ ┉ ┉ ┉ ┉ ┉
+[⍆ 𝘞𝘌𝘓𝘤𝘰𝘮𝘦 𝘙𝘈𝘝𝘌𝘕 𝘛𝘌𝘈𝘔 .](t.me/XUaXU)
+ ••••┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉••••
 ]]
-send(msg.chat_id_, msg.id_,Text)
-return false
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'قناة السوࢪس 📢 .',url="t.me/XUaXU"},
+},
+{
+{text = 'شࢪوحات السوࢪس 📑', url="https://t.me/RaVeNFiles"},
+},
+{
+{text = 'مطور السوࢪس 📂',url="https://t.me/EEEEEL"},
+},
+{
+{text = 'تواصل السوࢪس 💬', url="https://t.me/mw_mBOT"},
+},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 --------------------------------------------------------------------------------------------------------------
 if Chat_Type == 'GroupBot' and ChekAdd(msg.chat_id_) == true then
