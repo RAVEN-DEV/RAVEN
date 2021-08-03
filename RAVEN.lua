@@ -2724,26 +2724,23 @@ if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or tex
 local url,res = https.request('https://vvvzvv.ml/RAVEN/Raven.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.info ~= true then
-send(msg.chat_id_,msg.id_,'✫︙شترك في قناة السورس اولآ @XUaXU .')
-return false 
+send(msg.chat_id_,msg.id_,'✫︙شترك في قناة السورس اولآ @XXXZZ .')
+return false
 end
 Text = [[
-[⍆ 𝘞𝘌𝘓𝘤𝘰𝘮𝘦 𝘙𝘈𝘝𝘌𝘕 𝘛𝘌𝘈𝘔 .](t.me/XUaXU)
+[✫︙𝙎𝙊𝙐𝙍𝘾 𝙍𝘼𝙑𝙀𝙉 𝙏𝙀𝘼𝙈 .](t.me/XUaXU)
  ••••┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉••••
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'قناة السوࢪس 📢 .',url="t.me/XUaXU"},
+{text = '✫︙𝙎𝙊𝙐𝙍𝘾𝙀 𝘾𝙃𝘼𝙉𝙉𝙀𝙇 .',url="t.me/XUaXU"},
 },
 {
-{text = 'شࢪوحات السوࢪس 📑', url="https://t.me/RaVeNFiles"},
+{text = '✫︙𝙍𝘼𝙑𝙀𝙉 𝘿𝙀𝙑 .', url="https://t.me/RaVeNFiles"},
 },
 {
-{text = 'مطور السوࢪس 📂',url="https://t.me/EEEEEL"},
-},
-{
-{text = 'تواصل السوࢪس 💬', url="https://t.me/mw_mBOT"},
+{text = '✫︙𝙏𝙒𝙀𝙎 𝙍𝘼𝙑𝙀𝙉 .', url="https://t.me/mw_mBOT"},
 },
 }
 local msg_id = msg.id_/2097152/0.5
@@ -8098,22 +8095,23 @@ end
 if text == "الرابط" then 
 local status_Link = database:get(bot_id.."Link_Group:status"..msg.chat_id_)
 if not status_Link then
-send(msg.chat_id_, msg.id_," *✫ الرابط معطل*") 
+send(msg.chat_id_, msg.id_,"*✫︙الرابط معطل*") 
 return false  
 end
-local link = database:get(bot_id.."Private:Group:Link"..msg.chat_id_)
-if link then  
-send(msg.chat_id_,msg.id_,'𝒍𝒊𝒏𝒌 𝒈𝒓𝒐𝒖𝒑  𖠐\n*•━━━━━━ 𝗥𝗡 ━━━━━━━•*\n ['..link..']')  
-else
+tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,ta) 
+local link = database:get(bot_id.."Private:Group:Link"..msg.chat_id_)            
+if link then                              
+send(msg.chat_id_,msg.id_,' ['..ta.title_..']('..link..')')                          
+else                
 local linkgpp = json:decode(https.request('https://api.telegram.org/bot'..token..'/exportChatInviteLink?chat_id='..msg.chat_id_))
 if linkgpp.ok == true then 
-database:set(bot_id.."Private:Group:Link"..msg.chat_id_,linkgpp.result)
-linkgp = '𝒍𝒊𝒏𝒌 𝒈𝒓𝒐𝒖𝒑  ??\n*•━━━━━━ 𝗥𝗡 ━━━━━━━•*\n ['..linkgpp.result..']'
+linkgp = ' ['..ta.title_..']('..linkgpp.result..')'
 else
-linkgp = ' *✫ لا يوجد رابط ارسل ضع رابط*'
+linkgp = '*✫︙لا يوجد رابط ارسل ضع رابط*'
 end  
-send(msg.chat_id_, msg.id_,linkgp)  
-end
+send(msg.chat_id_, msg.id_,linkgp)              
+end            
+ end,nil)
 end
 if text == 'مسح الرابط' or text == 'حذف الرابط' then
 if Mod(msg) then 
