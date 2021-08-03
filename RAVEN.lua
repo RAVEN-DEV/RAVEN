@@ -2734,7 +2734,7 @@ Text = [[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '✫︙𝙎𝙊𝙐𝙍𝘾𝙀 𝘾𝙃𝘼𝙉𝙉𝙀𝙇 .',url="t.me/XUaXU"},
+{text = '✫︙𝙎𝙊𝙐𝙍𝘾𝙀 𝘾𝙃𝘼𝙉𝙉𝙀𝙇 .',url="t.me/XXXZZ"},
 },
 {
 {text = '✫︙𝙍𝘼𝙑𝙀𝙉 𝘿𝙀𝙑 .', url="https://t.me/RaVeNFiles"},
