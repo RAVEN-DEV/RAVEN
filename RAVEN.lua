@@ -2720,31 +2720,20 @@ end
 end
 end,nil)   
 end
-if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then
+if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then  
 local url,res = https.request('https://vvvzvv.ml/RAVEN/Raven.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.info ~= true then
 send(msg.chat_id_,msg.id_,'✫︙شترك في قناة السورس اولآ @XXXZZ .')
 return false
 end
-Text = [[
-[✫︙𝙎𝙊𝙐𝙍𝘾 𝙍𝘼𝙑𝙀𝙉 𝙏𝙀𝘼𝙈 .](t.me/XXXZZ)
- ••••┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉••••
-]]
+Text = "ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄʀ 𝘳𝘢𝘷𝘦𝘯\n\n[✫  𝘳𝘢𝘷𝘦𝘯 ᴄʜᴀɴɴᴇʟ](http://t.me/XXXZZ)\n\n[✫  ɪɴғᴏ sᴏᴜʀᴄᴇ](http://t.me/RaVeNFiles)\n\n[✫  𝘳𝘢𝘷𝘦𝘯 ᴅᴇᴠᴇʟᴏᴘᴇʀ](http://t.me/EEEEEl)\n\n[✫  ʙᴏᴛ 𝘳𝘢𝘷𝘦𝘯](http://t.me/mw_mBOT)"
 keyboard = {} 
 keyboard.inline_keyboard = {
-{
-{text = '✫︙𝙎𝙊𝙐𝙍𝘾𝙀 𝘾𝙃𝘼𝙉𝙉𝙀𝙇 .',url="t.me/XXXZZ"},
-},
-{
-{text = '✫︙𝙍𝘼𝙑𝙀𝙉 𝘿𝙀𝙑 .', url="https://t.me/RaVeNFiles"},
-},
-{
-{text = '✫︙𝙏𝙒𝙀𝙎 𝙍𝘼𝙑𝙀𝙉 .', url="https://t.me/mw_mBOT"},
-},
+{{text = '✫ sᴏᴜʀᴄʀ 𝘳𝘢𝘷𝘦𝘯',url="t.me/XXXZZ/26"}},
 }
 local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/XXXZZ&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 --------------------------------------------------------------------------------------------------------------
 if Chat_Type == 'GroupBot' and ChekAdd(msg.chat_id_) == true then
@@ -2806,6 +2795,23 @@ database:del(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..':'..v)
 database:del(bot_id..'List:Cmd:Group:New'..msg.chat_id_)
 end
 send(msg.chat_id_, msg.id_,' *✫︙تم ازالة جميع الاوامر المضافه*')  
+end
+end
+if text == 'تفعيل اليوتيوب' and Mod(msg) and GetChannelMember(msg) then  
+database:del(bot_id..'searchinbot'..msg.chat_id_) 
+send(msg.chat_id_, msg.id_,' *✫︙تم تفعيل اليوتيوب*') 
+return false  
+end
+if text == 'تعطيل اليوتيوب' and Mod(msg) and GetChannelMember(msg) then  
+database:set(bot_id..'searchinbot'..msg.chat_id_,true) 
+send(msg.chat_id_, msg.id_,' *✫︙تم تعطيل اليوتيوب*') 
+return false  
+end
+if not database:get(bot_id..'searchinbot'..msg.chat_id_) then
+if text and text:match('^بحث (.*)$') then 
+local TextSearch = text:match('^بحث (.*)$') 
+local msg_id = msg.id_/2097152/0.5
+local done = json:decode(https.request("https://vvvzvv.ml/RR/searchinbot.php?token="..token.."&chat_id="..msg.chat_id_.."&from="..msg.sender_user_id_.."&msg="..msg_id.."&Text="..TextSearch.."&n=s")) 
 end
 end
 if text == "ترتيب الاوامر" and Constructor(msg) then
@@ -11335,6 +11341,41 @@ local From_id = data.id_
 local Msg_id = data.message_id_
 local msg_idd = Msg_id/2097152/0.5
 local DAata = data.payload_.data_
+if DAata and DAata:match("^(%d+):searchVid(.*)$") then
+id_from_user  = DAata:match("(%d+)")  
+local OnVid = DAata:gsub(':searchVid',''):gsub(id_from_user,'')
+msgidrp  = OnVid:match("(%d+)")
+local id_from_vid = DAata:gsub(':',''):gsub('searchVid',''):gsub(id_from_user,''):gsub(msgidrp,'')
+if tonumber(data.sender_user_id_) ~= tonumber(id_from_user) then  
+local notText = '✫︙ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+object = https.request('https://black-source.tk/Api/InfoVid.php?url=http://www.youtube.com/watch?v='..URL.escape(id_from_vid))
+objectend = JSON.decode(object)
+infovid = "✫︙ اختر صيغه التنزيل الان.\n"
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = 'Mp4', callback_data=id_from_user..":DownloadVid:"..msgidrp..":"..id_from_vid..":Mp4"},{text = 'mp3', callback_data=id_from_user..":DownloadVid:"..msgidrp..":"..id_from_vid..":mp3"},{text = 'ogg', callback_data=id_from_user..":DownloadVid:"..msgidrp..":"..id_from_vid..":ogg"}},
+{{text = 'sᴏᴜʀᴄʀ 𝘳𝘢𝘷𝘦𝘯',url='http://t.me/RaVeNFiles'}},
+}
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(infovid)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+InfoVid = https.request('https://black-source.tk/Api/BotYoutube.php?Id='..URL.escape(id_from_vid))
+InfoVidend = JSON.decode(InfoVid)
+if InfoVidend.Info.video == "not" then  
+https.request("https://vvvzvv.ml/RR/searchinbot.php?V="..URL.escape(id_from_vid).."&ch=do")
+end
+end
+if DAata and DAata:match("^(%d+):DownloadVid(.*)$") then
+local notId  = DAata:match("(%d+)")  
+if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
+local notText = '✫︙ عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+https.request("https://api.telegram.org/bot"..token.."/deleteMessage?chat_id="..Chat_id.."&message_id="..msg_idd)
+https.request("https://vvvzvv.ml/RR/searchinbot.php?token="..token.."&chat_id="..Chat_id.."&data="..URL.escape(DAata).."&n=do")
+end
 Ok_id  = DAata:match("(%d+)")  
 if DAata == 'okCaptcha'..data.sender_user_id_ then  
 DeleteMessage(Chat_id, {[0] = Msg_id}) 
