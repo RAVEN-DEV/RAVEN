@@ -2727,10 +2727,10 @@ if data.Ch_Member.info ~= true then
 send(msg.chat_id_,msg.id_,'✫︙شترك في قناة السورس اولآ @XXXZZ .')
 return false
 end
-Text = "ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄʀ 𝘳𝘢𝘷𝘦𝘯\n\n[✫  𝘳𝘢𝘷𝘦𝘯 ᴄʜᴀɴɴᴇʟ](http://t.me/XXXZZ)\n\n[✫  ɪɴғᴏ sᴏᴜʀᴄᴇ](http://t.me/RaVeNFiles)\n\n[✫  𝘳𝘢𝘷𝘦𝘯 ᴅᴇᴠᴇʟᴏᴘᴇʀ](http://t.me/EEEEEl)\n\n[✫  ʙᴏᴛ 𝘳𝘢𝘷𝘦𝘯](http://t.me/mw_mBOT)"
+Text = "ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄʀ ʀᴀᴠᴇɴ\n\n[✫  ʀᴀᴠᴇɴ ᴄʜᴀɴɴᴇʟ](http://t.me/XXXZZ)\n\n[✫  ɪɴғᴏ sᴏᴜʀᴄᴇ](http://t.me/RaVeNFiles)\n\n[✫  ʀᴀᴠᴇɴ ᴅᴇᴠᴇʟᴏᴘᴇʀ](http://t.me/EEEEEl)\n\n[✫  ʙᴏᴛ ʀᴀᴠᴇɴ](http://t.me/mw_mBOT)"
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '✫ sᴏᴜʀᴄʀ 𝘳𝘢𝘷𝘦𝘯',url="t.me/XXXZZ/26"}},
+{{text = '✫ sᴏᴜʀᴄʀ ʀᴀᴠᴇɴ',url="t.me/XXXZZ/26"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/XXXZZ&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -11357,7 +11357,7 @@ infovid = "✫︙ اختر صيغه التنزيل الان.\n"
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = 'Mp4', callback_data=id_from_user..":DownloadVid:"..msgidrp..":"..id_from_vid..":Mp4"},{text = 'mp3', callback_data=id_from_user..":DownloadVid:"..msgidrp..":"..id_from_vid..":mp3"},{text = 'ogg', callback_data=id_from_user..":DownloadVid:"..msgidrp..":"..id_from_vid..":ogg"}},
-{{text = 'sᴏᴜʀᴄʀ 𝘳𝘢𝘷𝘦𝘯',url='http://t.me/RaVeNFiles'}},
+{{text = 'sᴏᴜʀᴄʀ ʀᴀᴠᴇɴ',url='http://t.me/RaVeNFiles'}},
 }
 https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(infovid)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 InfoVid = https.request('https://black-source.tk/Api/BotYoutube.php?Id='..URL.escape(id_from_vid))
@@ -11954,7 +11954,7 @@ local idchci = "-100"..idch
 local animation = DAata:match("^animation(.*)$"):gsub('chatid',''):gsub('chatid',''):gsub(idch,''):gsub('-100','')
 local Text ="*✫ تم الغاء منعها بنجاح*"
 inline = {
-{{text = 'sᴏᴜʀᴄʀ 𝘳𝘢𝘷𝘦𝘯',url='http://t.me/RaVeNFiles'}},
+{{text = 'sᴏᴜʀᴄʀ ʀᴀᴠᴇɴ',url='http://t.me/RaVeNFiles'}},
 }
 https.request("https://api.telegram.org/bot"..token.."/deleteMessage?chat_id="..Chat_id.."&message_id="..msg_idd)
 send_inlin_key(Chat_id,Text,inline)
@@ -11965,7 +11965,7 @@ local idchci = database:get(bot_id.."Filter:msg")
 local photo = DAata:match("^pito(.*)$")
 local Text ="*✫ تم الغاء منعها بنجاح*"
 inline = {
-{{text = 'sᴏᴜʀᴄʀ 𝘳𝘢𝘷𝘦𝘯',url='http://t.me/RaVeNFiles'}},
+{{text = 'sᴏᴜʀᴄʀ ʀᴀᴠᴇɴ',url='http://t.me/RaVeNFiles'}},
 }
 https.request("https://api.telegram.org/bot"..token.."/deleteMessage?chat_id="..Chat_id.."&message_id="..msg_idd)
 send_inlin_key(Chat_id,Text,inline)
@@ -11977,7 +11977,7 @@ local idchci = "-100"..idch
 local Sticker = DAata:match("^Sticker(.*)$"):gsub('chatid',''):gsub('chatid',''):gsub(idch,''):gsub('-100','')
 local Text ="*✫ تم الغاء منعه بنجاح*"
 inline = {
-{{text = 'sᴏᴜʀᴄʀ 𝘳𝘢𝘷𝘦𝘯',url='http://t.me/RaVeNFiles'}},
+{{text = 'sᴏᴜʀᴄʀ ʀᴀᴠᴇɴ',url='http://t.me/RaVeNFiles'}},
 }
 https.request("https://api.telegram.org/bot"..token.."/deleteMessage?chat_id="..Chat_id.."&message_id="..msg_idd)
 send_inlin_key(Chat_id,Text,inline)
@@ -11987,7 +11987,7 @@ if DAata and DAata:match("^delallSticker(.*)$") then
 local delallSticker = DAata:match("^delallSticker(.*)$")
 local Text ="*✫ تم الغاء منع كل المتحركات*"
 inline = {
-{{text = 'sᴏᴜʀᴄʀ 𝘳𝘢𝘷𝘦𝘯',url='http://t.me/RaVeNFiles'}},
+{{text = 'sᴏᴜʀᴄʀ ʀᴀᴠᴇɴ',url='http://t.me/RaVeNFiles'}},
 }
 https.request("https://api.telegram.org/bot"..token.."/deleteMessage?chat_id="..Chat_id.."&message_id="..msg_idd)
 send_inlin_key(Chat_id,Text,inline)
@@ -12000,7 +12000,7 @@ if DAata and DAata:match("^delallanimation(.*)$") then
 local delallmation = DAata:match("^delallanimation(.*)$")
 local Text ="*✫ تم الغاء منع كل المتحركات*"
 inline = {
-{{text = 'sᴏᴜʀᴄʀ 𝘳𝘢𝘷𝘦𝘯',url='http://t.me/RaVeNFiles'}},
+{{text = 'sᴏᴜʀᴄʀ ʀᴀᴠᴇɴ',url='http://t.me/RaVeNFiles'}},
 }
 https.request("https://api.telegram.org/bot"..token.."/deleteMessage?chat_id="..Chat_id.."&message_id="..msg_idd)
 send_inlin_key(Chat_id,Text,inline)
@@ -12013,7 +12013,7 @@ if DAata and DAata:match("^delallph(.*)$") then
 local delallph = DAata:match("^delallph(.*)$")
 local Text ="*✫ تم الغاء منع كل الصور*"
 inline = {
-{{text = 'sᴏᴜʀᴄʀ 𝘳𝘢𝘷𝘦𝘯',url='http://t.me/RaVeNFiles'}},
+{{text = 'sᴏᴜʀᴄʀ ʀᴀᴠᴇɴ',url='http://t.me/RaVeNFiles'}},
 }
 https.request("https://api.telegram.org/bot"..token.."/deleteMessage?chat_id="..Chat_id.."&message_id="..msg_idd)
 send_inlin_key(Chat_id,Text,inline)
